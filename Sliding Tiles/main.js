@@ -31,7 +31,9 @@ class button{
                     let previous = this.btn.id;
                     document.getElementById(next).style.opacity = '1.0';
                     document.getElementById(previous).style.opacity = '0.0';
+                    let store = document.getElementById(next).innerText;
                     document.getElementById(next).innerText = document.getElementById(previous).innerText;
+                    document.getElementById(previous).innerText = store;
 
                     arr[this.col][this.row].empty = true;
                     arr[this.col - 1][this.row].empty = false;
@@ -43,7 +45,9 @@ class button{
                     let previous = this.btn.id;
                     document.getElementById(next).style.opacity = '1.0';
                     document.getElementById(previous).style.opacity = '0.0';
+                    let store = document.getElementById(next).innerText;
                     document.getElementById(next).innerText = document.getElementById(previous).innerText;
+                    document.getElementById(previous).innerText = store;
 
                     arr[this.col][this.row].empty = true;
                     arr[this.col + 1][this.row].empty = false;
@@ -54,7 +58,9 @@ class button{
                     let previous = this.btn.id;
                     document.getElementById(next).style.opacity = '1.0';
                     document.getElementById(previous).style.opacity = '0.0';
+                    let store = document.getElementById(next).innerText;
                     document.getElementById(next).innerText = document.getElementById(previous).innerText;
+                    document.getElementById(previous).innerText = store;
 
                     arr[this.col][this.row].empty = true;
                     arr[this.col][this.row + 1].empty = false;
@@ -65,11 +71,33 @@ class button{
                     let previous = this.btn.id;
                     document.getElementById(next).style.opacity = '1.0';
                     document.getElementById(previous).style.opacity = '0.0';
+                    let store = document.getElementById(next).innerText;
                     document.getElementById(next).innerText = document.getElementById(previous).innerText;
+                    document.getElementById(previous).innerText = store;
 
                     arr[this.col][this.row].empty = true;
                     arr[this.col][this.row - 1].empty = false;
                 }                   
+            }
+
+            let number = 1;
+            let win = true;
+            for(let Button =0; Button < btn.length; Button++){
+                if(btn.item(Button).innerText != number.toString()){
+                    win = false;
+                }
+                number++;
+            }
+            if(win){
+                console.log('win')
+                let Wintitle = document.createElement('div');
+                Wintitle.innerHTML = `<div id = "Win">
+                    <p id="WinTitle">You Win!</p>
+                </div>`;
+                let main = document.querySelector('.main');
+                let body = document.querySelector('body');
+                main.remove();
+                body.append(Wintitle);
             }
         });
         if(this.empty){

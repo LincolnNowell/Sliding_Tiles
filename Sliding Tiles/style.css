@@ -30,3 +30,17 @@ body{
     border-radius: 5px;
     box-shadow: 2px 2px 3px #999;
 }
+
+#Win{
+    margin: 15% 25% 25px 25%;
+    text-align: center;
+    z-index: 1;
+    background-color: #365577;
+    color: white;
+    border-radius: 5px;
+}
+
+#WinTitle{
+    font-family: 'Lilita One', cursive;
+    font-size: 100px;
+}
