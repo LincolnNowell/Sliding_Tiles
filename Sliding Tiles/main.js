@@ -24,6 +24,9 @@ class button{
         this.row = row;
         this.col = col;
         this.btn.addEventListener('click',(event) =>{
+            let NumMoves = document.getElementById('moves').innerHTML;
+            let moves = Number.parseInt(NumMoves);
+            document.getElementById('moves').innerHTML = ++moves;
 
             if(this.col - 1 > -1){
                 if(arr[this.col - 1][this.row].empty){
@@ -97,7 +100,7 @@ class button{
                 let main = document.querySelector('.main');
                 let body = document.querySelector('body');
                 main.remove();
-                body.append(Wintitle);
+                body.insertBefore(Wintitle,body.children[1]);
             }
         });
         if(this.empty){
